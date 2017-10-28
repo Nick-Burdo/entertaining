@@ -14,7 +14,7 @@ for (var i = 0; i < arr.length; i++) {
 }
 ```
 
-####Right answer
+#### Right answer
 
 ```
 Index: 4, element: undefined
@@ -23,7 +23,7 @@ Index: 4, element: undefined
 Index: 4, element: undefined
 ```
 
-####Needed result
+#### Needed result
 
 ```
 Index: 0, element: 10
@@ -32,7 +32,7 @@ Index: 2, element: 15
 Index: 3, element: 21
 ```
 
-###Result correction. Method 1
+### Result correction. Method 1
 
 Used 3-th argument for <code>setTimeout()</code> function to send loop variable into the closure
 
@@ -46,7 +46,7 @@ for (var i = 0; i < arr.length; i++) {
 }
 ```
 
-###Result correction. Method 2
+### Result correction. Method 2
 
 Used <code>let</code> keyword for define the loop variable
 
