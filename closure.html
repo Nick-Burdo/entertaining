@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Closure & function setTimeout</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h1>Closure & function setTimeout</h1>
+
+    <h3>What is this loop's  result?</h3>
+
+<pre>
+const arr = [10, 12, 15, 21];
+
+for (var i = 0; i < arr.length; i++) {
+    setTimeout(function() {
+        console.log('Index: ' + i + ', element: ' + arr[i]);
+    });
+}
+</pre>
+
+    <h4>Right answer</h4>
+
+<pre>
+    Index: 4, element: undefined
+    Index: 4, element: undefined
+    Index: 4, element: undefined
+    Index: 4, element: undefined
+</pre>
+
+    <h4>Needed result</h4>
+<pre>
+    Index: 0, element: 10
+    Index: 1, element: 12
+    Index: 2, element: 15
+    Index: 3, element: 21
+</pre>
+
+    <h3>Result correction. Method 1</h3>
+    <p>Used 3-th argument for <code>setTimeout()</code> function to send loop variable into the closure</p>
+<pre>
+const arr = [10, 12, 15, 21];
+
+for (var i = 0; i < arr.length; i++) {
+    setTimeout(function(i) {
+        console.log('Index: ' + i + ', element: ' + arr[i]);
+    }, 0, i);
+}
+</pre>
+
+    <h3>Result correction. Method 2</h3>
+    <p>Used <code>let</code> for define the loop variable</p>
+<pre>
+const arr = [10, 12, 15, 21];
+
+for (let i = 0; i < arr.length; i++) {
+    setTimeout(function() {
+        console.log('Index: ' + i + ', element: ' + arr[i]);
+    });
+}
+</pre>
+</div>
+
+<script src="closure.js"></script>
+</body>
+</html>
