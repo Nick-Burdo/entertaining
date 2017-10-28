@@ -1,8 +1,8 @@
-#Entertaining Tasks
+# Entertaining Tasks
 
-##Closure & function setTimeout
+## Closure & function setTimeout
 
-###What is this loop's  result?
+### What is this loop's  result?
 
 ```
 const arr = [10, 12, 15, 21];
