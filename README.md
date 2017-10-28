@@ -34,7 +34,7 @@ Index: 3, element: 21
 
 ### Result correction. Method 1
 
-Used 3-th argument for <code>setTimeout()</code> function to send loop variable into the closure
+Used 3-th argument for `setTimeout()` function to send loop variable into the closure
 
 ```
 const arr = [10, 12, 15, 21];
@@ -48,7 +48,7 @@ for (var i = 0; i < arr.length; i++) {
 
 ### Result correction. Method 2
 
-Used <code>let</code> keyword for define the loop variable
+Used ES-6 `let` keyword for define the loop variable
 
 ```
 const arr = [10, 12, 15, 21];
